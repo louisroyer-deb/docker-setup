@@ -1,6 +1,6 @@
 Source: docker-setup
-Maintainer: Debian Go Packaging Team <team+pkg-go@tracker.debian.org>
-Uploaders: Louis Royer <TODO>
+Maintainer: Louis Royer <louis.royer@irit.fr> 
+Uploaders: Louis Royer <louis.royer@irit.fr>
 Section: golang
 Testsuite: autopkgtest-pkg-go
 Priority: optional
@@ -15,11 +15,12 @@ Rules-Requires-Root: no
 XS-Go-Import-Path: github.com/louisroyer/docker-setup
 
 Package: docker-setup
-Architecture: all
+Architecture: any
 Depends: iproute2,
          iptables,
          ${misc:Depends},
          ${shlibs:Depends}
+Built-Using: ${misc:Built-Using}
 Description: Docker container configuration (library)
  Docker-setup Docker-setup is a program that allow configure a container
  (for networking) via environment variables.
