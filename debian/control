@@ -1,0 +1,25 @@
+Source: docker-setup
+Maintainer: Debian Go Packaging Team <team+pkg-go@tracker.debian.org>
+Uploaders: Louis Royer <TODO>
+Section: golang
+Testsuite: autopkgtest-pkg-go
+Priority: optional
+Build-Depends: debhelper-compat (= 13),
+               dh-golang,
+               golang-any
+Standards-Version: 4.5.0
+Vcs-Browser: https://salsa.debian.org/go-team/packages/golang-github-louisroyer-docker-setup
+Vcs-Git: https://salsa.debian.org/go-team/packages/golang-github-louisroyer-docker-setup.git
+Homepage: https://github.com/louisroyer/docker-setup
+Rules-Requires-Root: no
+XS-Go-Import-Path: github.com/louisroyer/docker-setup
+
+Package: docker-setup
+Architecture: all
+Depends: iproute2,
+         iptables,
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: Docker container configuration (library)
+ Docker-setup Docker-setup is a program that allow configure a container
+ (for networking) via environment variables.
