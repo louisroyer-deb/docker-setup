@@ -8,8 +8,8 @@ Build-Depends: debhelper-compat (= 13),
                dh-golang,
                golang-any
 Standards-Version: 4.5.0
-Vcs-Browser: https://salsa.debian.org/go-team/packages/golang-github-louisroyer-docker-setup
-Vcs-Git: https://salsa.debian.org/go-team/packages/golang-github-louisroyer-docker-setup.git
+Vcs-Browser: https://github.com/louisroyer-deb/docker-setup
+Vcs-Git: https://github.com/louisroyer-deb/docker-setup.git
 Homepage: https://github.com/louisroyer/docker-setup
 Rules-Requires-Root: no
 XS-Go-Import-Path: github.com/louisroyer/docker-setup
