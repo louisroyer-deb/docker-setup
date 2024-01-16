@@ -1,3 +1,9 @@
+docker-setup (1.0.3-1) bookworm; urgency=medium
+
+  * New upstream version 1.0.3
+
+ -- Louis Royer <louis.royer@irit.fr>  Tue, 16 Jan 2024 17:04:50 +0100
+
 docker-setup (1.0.2-2) bookworm; urgency=medium
 
   * VCS update
