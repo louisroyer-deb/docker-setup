@@ -37,7 +37,7 @@ func NewNat4Hooks() Nat4Hook {
 		ifaces_l := strings.Split(ifaces, "\n")
 		hook.ifaces = make([]string, len(ifaces_l))
 		for i, iface := range ifaces_l {
-			hook.ifaces[i] = strings.TrimSpace(strings.TrimLeft(strings.TrimSpace(iface), "-"))
+			hook.ifaces[i] = strings.TrimSpace(strings.TrimLeft(strings.Split(strings.TrimSpace(iface), "#")[0], "-"))
 		}
 		hook.isset = true
 	}
@@ -47,6 +47,9 @@ func NewNat4Hooks() Nat4Hook {
 
 // Runs IPv4 NAT init hook
 func (hook Nat4Hook) RunInit() error {
+	if !hook.isset {
+		return nil
+	}
 	if err := runIP4Tables("-I", "FORWARD", "-j", "ACCEPT"); err != nil {
 		return err
 	}
@@ -60,6 +63,9 @@ func (hook Nat4Hook) RunInit() error {
 
 // Runs IPv4 NAT exit hook
 func (hook Nat4Hook) RunExit() error {
+	if !hook.isset {
+		return nil
+	}
 	errcount := 0
 	var lasterr error
 	for _, iface := range hook.ifaces {
