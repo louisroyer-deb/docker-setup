@@ -1,3 +1,9 @@
+docker-setup (1.0.3-2) bookworm; urgency=medium
+
+  * Update Built-Using to Static-Built-Using
+
+ -- Louis Royer <louis.royer@irit.fr>  Mon, 23 Sep 2024 16:31:45 +0200
+
 docker-setup (1.0.3-1) bookworm; urgency=medium
 
   * New upstream version 1.0.3
